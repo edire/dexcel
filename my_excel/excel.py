@@ -10,11 +10,9 @@ class Excel():
     
     macro_path = os.path.join(directory, 'MiscFiles', 'SharedVBA.bas')
     xl = Dispatch("Excel.Application")
-    num_instances = xl.Application.Workbooks.Count
     
     
     def __init__(self, file_path, import_vba=False, visible=False):
-        Excel.num_instances += 1
         self.directory = os.path.dirname(file_path)
         self.workbook = os.path.basename(file_path)
         
@@ -31,12 +29,13 @@ class Excel():
     
     
     def __cleanup(self):
-        Excel.num_instances -= 1
+        num_instances = Excel.xl.Application.Workbooks.Count
         try:
             self.close()
+            num_instances -= 1
         except:
             pass
-        if Excel.num_instances == 0:
+        if num_instances <= 0:
             Excel.xl.Application.Quit()
             
     

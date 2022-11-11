@@ -11,10 +11,10 @@ pip install git+https://github.com/edire/my_excel.git
 ```python
 import my_excel
 
-xl = Excel('.\file_path.xlsx', visible=True)
-xl.refresh_all()
-xl.save()
-xl.close()
+with my_excel.Excel('.\file_path.xlsx', import_vba=True, visible=True) as xl:
+	xl.refresh_all()
+	xl.save()
+	xl.close(save=True)
 ```
 
 ## Contributing
@@ -24,3 +24,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 MIT License
+
+## Release Updates
+
+Adjusted Excel workbook counter before closing application.
