@@ -1,17 +1,17 @@
-# my_webdrivers
+# Description
 
-A Python library for custom data connections.
+A Python library by Dire Analytics for controlling Microsoft Excel files.
 
 ## Installation
 
-pip install git+https://github.com/edire/my_excel.git
+pip install git+https://github.com/edire/dexcel.git
 
 ## Usage
 
 ```python
-import my_excel
+import dexcel
 
-with my_excel.Excel('.\file_path.xlsx', import_vba=True, visible=True) as xl:
+with dexcel.Excel('.\file_path.xlsx', import_vba=True, visible=True) as xl:
 	xl.refresh_all()
 	xl.save()
 	xl.close(save=True)
@@ -24,7 +24,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 MIT License
-
-## Release Updates
-
-Adjusted Excel workbook counter before closing application.
