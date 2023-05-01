@@ -2,7 +2,7 @@
 from setuptools import setup
 setup(
     name='dexcel',
-    version='0.0.1',
+    version='0.0.2',
     author='Eric Di Re',
     description='Custom package for manipulating Microsoft Excel documents.',
     url='https://github.com/edire/dexcel.git',

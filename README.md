@@ -24,3 +24,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 MIT License
+
+## Updates
+
+05/01/2023 - Added apostrophes around workbook name in run macro command.

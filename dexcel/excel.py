@@ -71,7 +71,7 @@ class Excel():
             
             
     def run(self, macro, module='Module1'):
-        Excel.xl.Application.Run(f"{self.workbook}!{module}.{macro}")
+        Excel.xl.Application.Run(f"'{self.workbook}'!{module}.{macro}")
 
 
     def refresh_all(self):
@@ -79,8 +79,8 @@ class Excel():
         
         
     def save_pdf(self, pdf_sheet, pdf_range, pdf_path):
-        Excel.xl.Application.Run(f"{self.workbook}!SharedVBA.SavePDF", pdf_sheet, pdf_range, pdf_path)
+        Excel.xl.Application.Run(f"'{self.workbook}'!SharedVBA.SavePDF", pdf_sheet, pdf_range, pdf_path)
         
         
     def range_to_image(self, pic_sheet, pic_range, pic_path):
-        Excel.xl.Application.Run(f"{self.workbook}!SharedVBA.RangetoImage", pic_sheet, pic_range, pic_path)
+        Excel.xl.Application.Run(f"'{self.workbook}'!SharedVBA.RangetoImage", pic_sheet, pic_range, pic_path)
